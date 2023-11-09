@@ -22,6 +22,6 @@ RUN git clone https://github.com/BachiLi/diffvg.git && cd diffvg && git submodul
 
 RUN git clone https://github.com/ximinng/VectorFusion-pytorch.git
 WORKDIR /VectorFusion-pytorch
-COPY vectorfusion.sh .
-RUN chmod +x vectorfusion.sh
-#CMD ["python3", "run_painterly_render.py", "-c", "vectorfusion.yaml", "-pt", "a cockroach. minimal flat 2d vector icon. lineal color. on a white background. trending on artstation", "-save_step", "10", "-respath", "/tmp/workdir", "-update", "K=20", "-d", "8888", "--download"]
+COPY run.sh .
+RUN chmod +x ./run.sh
+ENTRYPOINT ["./run.sh"]
