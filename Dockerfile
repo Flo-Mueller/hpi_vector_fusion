@@ -18,7 +18,7 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 
-RUN git clone https://github.com/BachiLi/diffvg.git && cd diffvg && git submodule update --init --recursive && python setup.py install
+RUN git clone https://github.com/BachiLi/diffvg.git && cd diffvg && git submodule update --init --recursive && DIFFVG_CUDA=1 python setup.py install
 
 RUN git clone https://github.com/ximinng/VectorFusion-pytorch.git
 WORKDIR /VectorFusion-pytorch
