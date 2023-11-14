@@ -1,7 +1,7 @@
 # Docker commands
 
-Building: ```docker build -t vectorfusion_leon:latest .```
+Building: ```docker build -t vectorfusion:latest .```
 
-Run: ```CUDA_VISIBLE_DEVICES=0 docker run --rm --name="vectorfusion" -v "$(pwd):/tmp/workdir" --gpus all vectorfusion:latest``` + prompt
+Run: ```docker run --rm --name="vectorfusion" -v "$(pwd):/tmp/workdir" --gpus '"device=index_of_cuda"' vectorfusion:latest``` + prompt
 
-Example: CUDA_VISIBLE_DEVICES=0 docker run --rm --name="vectorfusion" -v "$(pwd):/tmp/workdir" --gpus all vectorfusion:latest 'A penguin fighting a cockroach'
+Example: docker run --rm --name="vectorfusion" -v "$(pwd):/tmp/workdir" --gpus '"device=0"' vectorfusion:latest 'a crown.'
