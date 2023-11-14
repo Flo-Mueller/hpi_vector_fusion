@@ -1,0 +1,3 @@
+[submodule "VectorFusion-pytorch"]
+	path = VectorFusion-pytorch
+	url = https://github.com/LeonHermann322/VectorFusion-pytorch.git
