@@ -4,11 +4,12 @@ services:
     command: python3 run_painterly_render.py -c vectorfusion.yaml -pt "${PROMPT}" -save_step 10 -respath /tmp/workdir -d 8888 --download
     volumes:
       - ./VectorFusion-pytorch:/VectorFusion-pytorch
+      - ./assets:/assets
       - ./tmp:/tmp/workdir
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: all
+              count: ${GPU_ID}
               capabilities: [ gpu ]
