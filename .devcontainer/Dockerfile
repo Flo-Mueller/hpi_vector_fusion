@@ -23,10 +23,7 @@ RUN python -m pip install -r requirements.txt
 
 # Git repos initialization
 RUN git clone https://github.com/BachiLi/diffvg.git && cd diffvg && git submodule update --init --recursive && DIFFVG_CUDA=1 python setup.py install
-RUN git clone https://github.com/ximinng/VectorFusion-pytorch.git
+COPY VectorFusion-pytorch VectorFusion-pytorch
 
 # Image generation script
 WORKDIR /VectorFusion-pytorch
-COPY run.sh .
-RUN chmod +x ./run.sh
-ENTRYPOINT ["./run.sh"]
