@@ -23,7 +23,11 @@
         }
     },
     "image": "vectorfusion_leon:latest",
+    "containerEnv": {
+        "NVIDIA_VISIBLE_DEVICES": "1"
+    },
     "runArgs": [
-        "--gpus=\"device=1\"",
+        "--gpus",
+        "all"
     ]
 }
