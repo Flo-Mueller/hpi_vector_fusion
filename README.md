@@ -1,7 +1,24 @@
 # Docker commands
 
-Building: ```docker build -t vectorfusion:latest .```
+Build and Run: ```docker compose up --build```
 
-Run: ```docker run --rm --name="vectorfusion" -v "$(pwd):/tmp/workdir" --gpus '"device=index_of_cuda"' vectorfusion:latest``` + prompt
+Run (if container is already build): ```docker compose up```
 
-Example: docker run --rm --name="vectorfusion" -v "$(pwd):/tmp/workdir" --gpus '"device=0"' vectorfusion:latest 'a crown.'
+# Env variables
+
+Stored in .env
+
+```dosini
+GPU_ID=<ID of GPU - 0 or 1>
+
+PARAMS="<Override configuration parameters>"
+PROMPT="<Text prompt used for generation>"
+```
+
+# Mounted directories
+
+- ```./VectorFusion-pytorch``` (Make VectorFusion code available in container)
+- ```./assets``` (Assets like images/svgs you want to use in the pipeline)
+- ```./tmp:``` (Output of pipeline)
+
+Note: You don't have to rebuild the container on code changes! A rebuild is only necessary if you add dependencies to the ```requirements.txt``` or make changes in the ```Dockerfile```.
