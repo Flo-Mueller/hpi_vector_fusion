@@ -5,6 +5,7 @@ services:
     command: python3 run_painterly_render.py -c vectorfusion.yaml -update="${PARAMS}" -pt "${PROMPT}" -save_step 10 -respath /tmp/workdir -d 8888 --project-name "${WANDB_PROJECT}" --download
     volumes:
       - ./VectorFusion-pytorch:/VectorFusion-pytorch
+      - ./DiffSketcher:/DiffSketcher
       - ./assets:/assets
       - ./tmp:/tmp/workdir
     environment:
@@ -15,5 +16,5 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              device_ids: ["${GPU_ID}"]
+              device_ids: [ "${GPU_ID}" ]
               capabilities: [ gpu ]

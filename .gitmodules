@@ -1,3 +1,6 @@
+[submodule "DiffSketcher"]
+	path = DiffSketcher
+	url = https://github.com/LeonHermann322/DiffSketcher.git
 [submodule "VectorFusion-pytorch"]
 	path = VectorFusion-pytorch
 	url = https://github.com/LeonHermann322/VectorFusion-pytorch.git
