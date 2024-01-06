@@ -10,6 +10,7 @@ RUN apt-get update --yes --quiet && DEBIAN_FRONTEND=noninteractive apt-get insta
     software-properties-common \
     build-essential apt-utils gcc \
     wget curl vim git ca-certificates kmod \
+    && DEBIAN_FRONTEND=noninteractive apt-get remove --yes --quiet --allow-change-held-packages libcudnn8 \
     && rm -rf /var/lib/apt/lists/*
 
 # Python installation and initial dependencies
