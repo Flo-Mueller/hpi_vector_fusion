@@ -8,6 +8,7 @@ services:
       - ./DiffSketcher:/DiffSketcher
       - ./assets:/assets
       - ./tmp:/tmp/workdir
+      - ./testdata:/testdata
     environment:
       WANDB_API_KEY: ${WANDB_API_KEY}
       WANDB_PROJECT: ${WANDB_PROJECT}
