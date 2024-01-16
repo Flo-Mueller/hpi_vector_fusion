@@ -10,7 +10,11 @@ services:
       - ./tmp:/tmp/workdir
     environment:
       WANDB_API_KEY: ${WANDB_API_KEY}
+      WANDB_ENTITY: ${WANDB_ENTITY}
       WANDB_PROJECT: ${WANDB_PROJECT}
+      WANDB_NAME: ${WANDB_NAME}
+      WANDB_RUN_GROUP: ${WANDB_RUN_GROUP}
+      WANDB_TAGS: ${WANDB_TAGS}
     deploy:
       resources:
         reservations:
