@@ -16,7 +16,11 @@ CONTAINER_NAME=""
 
 GPU_ID=<ID of GPU - 0 or 1>
 WANDB_API_KEY=""
-WANDB_PROJECT=""
+WANDB_ENTITY="aiis-chair-students"
+WANDB_PROJECT="vector-fusion"
+WANDB_NAME="default-name"
+WANDB_RUN_GROUP="default-group"
+WANDB_TAGS="default"
 
 PARAMS="<Override configuration parameters>"
 PROMPT="<Text prompt used for generation>"
