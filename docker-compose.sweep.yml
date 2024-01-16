@@ -1,0 +1,21 @@
+services:
+  vector-fusion:
+    container_name: ${CONTAINER_NAME}
+    build: .
+    command: ["bash", "/VectorFusion-pytorch/start.sh"]
+    volumes:
+      - ./VectorFusion-pytorch:/VectorFusion-pytorch
+      - ./DiffSketcher:/DiffSketcher
+      - ./assets:/assets
+      - ./tmp:/tmp/workdir
+    environment:
+      WANDB_API_KEY: ${WANDB_API_KEY}
+      WANDB_PROJECT: ${WANDB_PROJECT}
+      PROMPT: ${PROMPT}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: [ "${GPU_ID}" ]
+              capabilities: [ gpu ]
