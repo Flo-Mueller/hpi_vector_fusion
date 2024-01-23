@@ -37,3 +37,4 @@ torch-tools
 git+https://github.com/openai/CLIP.git
 
 wandb
+cairosvg
