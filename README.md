@@ -2,14 +2,25 @@
 
 Build and Run: ```docker compose up --build```
 
-Run (if container is already build): ```docker compose up```
+If container is already build: ```docker compose up```
+
+Run sweep: ```docker compose -f docker-compose.sweep.yml up```
 
 # Env variables
 
 Stored in .env
 
 ```dosini
+COMPOSE_PROJECT_NAME=""
+CONTAINER_NAME=""
+
 GPU_ID=<ID of GPU - 0 or 1>
+WANDB_API_KEY=""
+WANDB_ENTITY="aiis-chair-students"
+WANDB_PROJECT="vector-fusion"
+WANDB_NAME="default-name"
+WANDB_RUN_GROUP="default-group"
+WANDB_TAGS="default"
 
 PARAMS="<Override configuration parameters>"
 PROMPT="<Text prompt used for generation>"

@@ -2,7 +2,7 @@ services:
   vector-fusion:
     container_name: ${CONTAINER_NAME}
     build: .
-    command: python3 run_painterly_render.py -c vectorfusion.yaml -update="${PARAMS}" -pt "${PROMPT}" -save_step 10 -respath /tmp/workdir -d 8888 --project-name "${WANDB_PROJECT}" --download
+    command: ["bash", "/VectorFusion-pytorch/start.sh"]
     volumes:
       - ./VectorFusion-pytorch:/VectorFusion-pytorch
       - ./DiffSketcher:/DiffSketcher
@@ -15,6 +15,7 @@ services:
       WANDB_NAME: ${WANDB_NAME}
       WANDB_RUN_GROUP: ${WANDB_RUN_GROUP}
       WANDB_TAGS: ${WANDB_TAGS}
+      PROMPT: ${PROMPT}
     deploy:
       resources:
         reservations:
